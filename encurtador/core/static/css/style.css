@@ -1,0 +1,90 @@
+body {
+  background: #f5f5f5;
+  font: 16px Lato, Arial;
+}
+
+a {
+  color: #20388e;
+}
+
+header h1 {
+  color: #16448e;
+  font-weight: 600;
+  font: 40px Lato, Arial;
+  text-align: center;
+}
+
+#container {
+  background: #FFF;
+  border-radius: 10px;
+  box-sizing:border-box;
+  margin:auto;
+  padding:50px;
+  width: 900px;
+}
+
+#container fieldset {
+  border-radius: 5px;
+  border:5px solid #506f8e;
+  padding: 0;
+}
+
+#container input {
+  font: 16px Lato, Arial;
+}
+
+#container input[type=text] {
+  border:none;
+  box-sizing:border-box;
+  height: 40px;
+  width: 80%;
+  outline: none;
+  padding:10px;
+}
+
+#container .btn {
+  background: #506f8e;
+  border:none;
+  box-sizing: border-box;
+  color: #FFF;
+  height: 40px;
+  width: 20%;
+  outline: none;
+}
+
+#container table {
+  background: #506f8e;
+  border-radius: 5px;
+  margin:20px 0;
+  width: 100%;
+}
+
+#container table th {
+  color: #fff;
+}
+
+#container table td {
+  padding:20px;
+  border-radius: 3px;
+}
+
+#container table tbody tr.even {
+  background: #FFF;
+}
+
+#container table tbody tr.odd {
+  background: #F5F5F5;
+}
+
+#result {
+  background: #418e46;
+  border-radius: 5px;
+  color: #FFF;
+  display: none;
+  margin:20px 0;
+  padding: 20px;
+}
+
+#result.fail {
+  background: #8e2020;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Encurtador</title>
+  <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" />
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <section id="container">
+
+    <header>
+      <h1>Encurtador</h1>
+    </header>
+
+    <fieldset>
+      <form action="{% url 'core:home' %}" method="post">
+        {% csrf_token %}
+        {% spaceless %}
+          {{ form.url }}
+          <input type="submit" value="Encurtar" class="btn" / >
+        {% endspaceless %}
+      </form>
+    </fieldset>
+
+    <div id="result"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Url</th>
+          <th>Views</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for url in urls %}
+        <tr class="{% cycle 'even' 'odd' %}">
+          <td><a href="http://localhost:8000/{{ url.short }}" target="_blank" title="{{ url.original }}">http://localhost:8000/{{ url.short }}</a></td>
+          <td>{{ url.views }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+  </section>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="{{STATIC_URL}}/js/shortener.js"></script>
+  <script src="{{STATIC_URL}}/js/scripts.js"></script>
+</body>
+</html>
