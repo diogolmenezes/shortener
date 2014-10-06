@@ -1,5 +1,9 @@
 from django import forms
+from django.forms import ModelForm
+from encurtador.core.models import Url
 
-class ShortenerForm(forms.Form):
-  url = forms.CharField(max_length=200)
+class UrlForm(ModelForm):
+  class Meta:
+    model  = Url
+    fields = ['original']
 
